@@ -6,10 +6,8 @@ import com.example.demo.model.UserInfoDTO;
 import com.example.demo.repository.InfoRepository;
 import com.example.demo.repository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.*;
 
-import java.util.List;
 import java.util.Optional;
 
 @RestController
@@ -24,7 +22,7 @@ public class UserController {
     private InfoRepository infoRepository;
 
     @GetMapping("/allusers")
-    public List<User> getAllUsers() {
+    public Iterable<User> getAllUsers() {
         return userRepository.findAll();
     }
 
